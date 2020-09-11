@@ -4,46 +4,45 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RockLikeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ARTICLES">
+    <Schema Namespace="RockLikeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Articles">
           <Key>
-            <PropertyRef Name="ID_ARTICLE" />
+            <PropertyRef Name="IdArticle" />
           </Key>
-          <Property Name="ID_ARTICLE" Type="int" Nullable="false" />
-          <Property Name="ARTICLE" Type="text" />
-          <Property Name="LIKE_COUNT" Type="int" Nullable="false" />
+          <Property Name="IdArticle" Type="int" Nullable="false" />
+          <Property Name="ArticleText" Type="text" />
+          <Property Name="LikeCount" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="RockLikeDBModelStoreContainer">
-          <EntitySet Name="ARTICLES" EntityType="Self.ARTICLES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RockLikeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ARTICLE">
-          <Key>
-            <PropertyRef Name="ID_ARTICLE" />
-          </Key>
-          <Property Name="ID_ARTICLE" Type="Int32" Nullable="false" />
-          <Property Name="ARTICLE1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="LIKE_COUNT" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="RockLikeDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ARTICLES" EntityType="Self.ARTICLE" />
+          <EntitySet Name="Articles" EntityType="RockLikeDBModel.Article" />
         </EntityContainer>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="IdArticle" />
+          </Key>
+          <Property Name="IdArticle" Type="Int32" Nullable="false" />
+          <Property Name="ArticleText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LikeCount" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RockLikeDBModelStoreContainer" CdmEntityContainer="RockLikeDBEntities">
-          <EntitySetMapping Name="ARTICLES">
-            <EntityTypeMapping TypeName="RockLikeDBModel.ARTICLE">
-              <MappingFragment StoreEntitySet="ARTICLES">
-                <ScalarProperty Name="ID_ARTICLE" ColumnName="ID_ARTICLE" />
-                <ScalarProperty Name="ARTICLE1" ColumnName="ARTICLE" />
-                <ScalarProperty Name="LIKE_COUNT" ColumnName="LIKE_COUNT" />
+        <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="RockLikeDBModel.Article">
+              <MappingFragment StoreEntitySet="Articles">
+                <ScalarProperty Name="LikeCount" ColumnName="LikeCount" />
+                <ScalarProperty Name="ArticleText" ColumnName="ArticleText" />
+                <ScalarProperty Name="IdArticle" ColumnName="IdArticle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,1 +1,1 @@
-INSERT INTO ARTICLES VALUES (1, 'Rock Content é uma empresa global de Marketing, sendo a maior da América Latina em Marketing de Conteúdo. Atualmente ela possui sedes em Belo Horizonte, Minas Gerais, em São Paulo, Capital e em Guadalajara, no México.', 0);
+INSERT INTO Articles VALUES (1, 'Rock Content é uma empresa global de Marketing, sendo a maior da América Latina em Marketing de Conteúdo. Atualmente ela possui sedes em Belo Horizonte, Minas Gerais, em São Paulo, Capital e em Guadalajara, no México.', 0);

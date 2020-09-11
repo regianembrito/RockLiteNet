@@ -170,11 +170,10 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ARTICLE.cs">
+    <Compile Include="Models\Article.cs">
       <DependentUpon>ArticleModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticleModel.Context.cs">

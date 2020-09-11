@@ -12,10 +12,10 @@ namespace RockLikeNet.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ARTICLE
+    public partial class Article
     {
-        public int ID_ARTICLE { get; set; }
-        public string ARTICLE1 { get; set; }
-        public int LIKE_COUNT { get; set; }
+        public int IdArticle { get; set; }
+        public string ArticleText { get; set; }
+        public int LikeCount { get; set; }
     }
 }

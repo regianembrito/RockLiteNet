@@ -18,21 +18,21 @@ namespace RockLikeNet.Controllers
         [HttpGet]
         public object Get(int id)
         {
-            var obj = dbEntities.ARTICLES.Where(x => x.ID_ARTICLE == id).ToList().FirstOrDefault();
+            var obj = dbEntities.Articles.Where(x => x.IdArticle == id).ToList().FirstOrDefault();
             return obj;
         }
 
         // PUT: api/Article/5
-        public object Put(int id, [FromBody]ARTICLE article)
+        public object Put(int id, [FromBody]Article article)
         {
             try
             {
-                if (article.ID_ARTICLE != 0)
+                if (article.IdArticle != 0)
                 {
-                    var obj = dbEntities.ARTICLES.Where(x => x.ID_ARTICLE == article.ID_ARTICLE).ToList().FirstOrDefault();
-                    if (obj.ID_ARTICLE > 0)
+                    var obj = dbEntities.Articles.Where(x => x.IdArticle == article.IdArticle).ToList().FirstOrDefault();
+                    if (obj.IdArticle > 0)
                     {
-                        obj.LIKE_COUNT = obj.LIKE_COUNT + 1;
+                        obj.LikeCount = obj.LikeCount + 1;
                         dbEntities.SaveChanges();
 
                         return new Response

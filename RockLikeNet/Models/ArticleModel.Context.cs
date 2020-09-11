@@ -25,6 +25,6 @@ namespace RockLikeNet.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ARTICLE> ARTICLES { get; set; }
+        public virtual DbSet<Article> Articles { get; set; }
     }
 }
